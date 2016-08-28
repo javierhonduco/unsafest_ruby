@@ -1,0 +1,4 @@
+*.bundle
+*.o
+*.sw[op]
+.DS_store

@@ -1,0 +1,15 @@
+require './unsafest_ruby'
+
+# Machine code for:
+#
+# mov ecx, 5
+# mov eax, 2
+# imul eax, ecx
+# ret
+code = [
+  0xB9, 0x05, 0x00, 0x00, 0x00, 0xB8, 0x02,
+  0x00, 0x00, 0x00, 0x0F, 0xAF, 0xC1, 0xC3
+]
+
+result = UnsafestRuby.execute(code)
+puts "result=#{result}"
